@@ -19,6 +19,12 @@ Take a look at the server code in __server.js__. The skeleton code for the
 endpoints is set up for you. You will have to fill out the code for each
 endpoints using the route parameter values and the parsed JSON request body.
 
+## Important Note
+
+You are not expected to complete this practice. Do as much as you can and
+compare your code with the solution code after this. Ask an instructor to
+walk you through any task you had trouble with during discussion.
+
 ## Parse the JSON Request Body
 
 Parse the request body in the server as JSON only when the `Content-Type` header
