@@ -32,7 +32,7 @@ const server = http.createServer((req, res) => {
         case "application/json":
           req.body = JSON.parse(reqBody);
           break;
-        case "x-www-form-urlencoded":
+        case "application/x-www-form-urlencoded":
           req.body = reqBody
             .split("&")
             .map((keyValuePair) => keyValuePair.split("="))
