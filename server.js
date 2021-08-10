@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
   req.on("end", () => { // request is finished assembly the entire request body
     // Parsing the body of the request depending on the Content-Type header
     if (reqBody) {
-      switch(req.headers['content-type']) {
+      switch (req.headers['content-type']) {
         case "application/json":
           req.body = JSON.parse(reqBody);
           break;
