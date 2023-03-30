@@ -54,6 +54,8 @@ const server = http.createServer((req, res) => {
     // GET /dogs
     if (req.method === 'GET' && req.url === '/dogs') {
       // Your code here
+
+      return res.end();
     }
 
     // GET /dogs/:dogId
@@ -63,12 +65,14 @@ const server = http.createServer((req, res) => {
         const dogId = urlParts[2];
         // Your code here
       }
+      return res.end();
     }
 
     // POST /dogs
     if (req.method === 'POST' && req.url === '/dogs') {
       const { name, age } = req.body;
       // Your code here
+      return res.end();
     }
 
     // PUT or PATCH /dogs/:dogId
@@ -78,6 +82,7 @@ const server = http.createServer((req, res) => {
         const dogId = urlParts[2];
         // Your code here
       }
+      return res.end();
     }
 
     // DELETE /dogs/:dogId
@@ -87,6 +92,7 @@ const server = http.createServer((req, res) => {
         const dogId = urlParts[2];
         // Your code here
       }
+      return res.end();
     }
 
     // No matching endpoint
@@ -97,6 +103,10 @@ const server = http.createServer((req, res) => {
 
 });
 
-const port = 5000;
 
-server.listen(port, () => console.log('Server is listening on port', port));
+if (require.main === module) {
+    const port = 8000;
+    server.listen(port, () => console.log('Server is listening on port', port));
+} else {
+    module.exports = server;
+}
